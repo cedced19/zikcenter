@@ -35,7 +35,7 @@ module.exports = function(grunt) {
   uncss: {
     dist: {
       files: {
-        'dist/vendor/css/styles.css': ['dist/index.html']
+        'dist/vendor/css/styles.css': ['index.html']
       }
     }
   },
