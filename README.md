@@ -7,6 +7,8 @@ A Node.js software to play random music.
 [![Dependencies](https://david-dm.org/cedced19/ZikCenter.png)](https://david-dm.org/cedced19/ZikCenter)
 [![devDependencies](https://david-dm.org/cedced19/ZikCenter/dev-status.png)](https://david-dm.org/cedced19/ZikCenter#info=devDependencies)
 
+Put your **.mp3** files in sources/.
+
 To launch in developpement:
 
 ```bash
