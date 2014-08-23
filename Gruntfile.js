@@ -9,6 +9,7 @@ module.exports = function(grunt) {
             'node_modules/socket.io/**/*',
             'node_modules/fast-http/**/*',
             'node_modules/opn/**/*',
+            'node_modules/chalk/**/*',
             '*.html',
             'source/',
             'vendor/**/*.*',
