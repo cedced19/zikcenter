@@ -35,10 +35,17 @@ module.exports = function(grunt) {
   uncss: {
     dist: {
       files: {
-        'dist/vendor/css/styles.css': ['index.html']
+        'dist/vendor/css/styles.css': ['index.html'],
       }
     }
   },
+  cssmin: {
+      after: {
+        files: {
+          'dist/vendor/css/styles.css': ['dist/vendor/css/styles.css']
+        }
+      }
+    },
   htmlmin: {
         dist: {
           options: {
@@ -58,5 +65,5 @@ module.exports = function(grunt) {
 
   // Load all Grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-  grunt.registerTask('default', ['copy', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'usemin', 'htmlmin', 'uncss']);
+  grunt.registerTask('default', ['copy', 'useminPrepare', 'concat', 'uglify', 'usemin', 'htmlmin', 'uncss', 'cssmin:after']);
 };
