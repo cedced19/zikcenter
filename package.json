@@ -1,0 +1,29 @@
+{
+  "name": "zikcenter",
+  "version": "0.0.1",
+  "description": "A software to broadcast music",
+  "main": "server.js",
+  "dependencies": {
+    "socket.io": "^1.0.6",
+    "opn": "^1.0.0",
+    "fast-http": "*",
+    "node-ls": "0.0.4"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "~0.5.0",
+    "matchdep": "~0.3.0",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-usemin": "^2.2.0",
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-uncss": "^0.3.6"
+  },
+  "author": {
+    "name": "Cédric",
+    "email": "cedced19@gmail.com",
+    "url": "https://github.com/cedced19"
+  },
+  "license": "MIT"
+}
