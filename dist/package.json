@@ -1,13 +1,14 @@
 {
   "name": "zikcenter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A software to broadcast music",
-  "main": "server.js",
+  "main": "cli.js",
   "dependencies": {
-    "socket.io": "^1.0.6",
     "opn": "^1.0.0",
     "chalk": "0.5.1",
-    "node-ls": "^0.0.4"
+    "node-ls": "^0.0.4",
+    "serve-static": "^1.5.3",
+    "express": "4.8.5"
   },
   "bin" : {
      "zik" :"cli.js"

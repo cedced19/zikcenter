@@ -1,23 +1,33 @@
 #!/usr/bin/env node
 'use strict';
-var   fastHttp = require('./custom-http'),
-        opn = require('opn'),
-        chalk = require('chalk'),
-        array = false,
+var   opn = require('opn'),
+        express = require('express'),
+        app = express(),
+        serveStatic = require('serve-static'),
         path = require('path'),
-        ls = require('node-ls'),
-        musicServer = fastHttp(772, process.cwd()),
-        httpServer = fastHttp(771, __dirname);
+        fs = require('fs'),
+        chalk = require('chalk'),
+        ls = require('node-ls');
 
-console.log('Server running at\n  => '+ chalk.green('http://localhost:771') + '\nCTRL + C to shutdown');
-opn('http://localhost:771');
 
-ls('./', '--all', function(er, list) {
-        array = list;
+app.get('/', function(req, res) {
+  fs.readFile(__dirname + '/index.html', function(err, data) {
+    res.end(data);
+  });
 });
 
-var io = require('socket.io').listen(httpServer);
-io.sockets.on('connection', function(socket){
-    socket.emit('setMusic', array);
+app.get('/musics', function(req, res) {
+    ls('./', '--all', function(er, list) {
+        res.json(list);
+    });
 });
 
+
+app.use(serveStatic(__dirname));
+app.use(serveStatic(process.cwd()));
+
+var server = require('http').createServer(app);
+server.listen(771, function() {
+    console.log('Server running at\n  => '+ chalk.green('http://localhost:771') + '\nCTRL + C to shutdown');
+    opn('http://localhost:771');
+});

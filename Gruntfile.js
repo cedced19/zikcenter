@@ -7,10 +7,8 @@ module.exports = function(grunt) {
           expand: true,
           src: [
             '*.html',
-            'custom-http.js',
             'vendor/**/*.*',
             'package.json',
-            '.gitignore',
             'cli.js',
             'README.md'
           ],

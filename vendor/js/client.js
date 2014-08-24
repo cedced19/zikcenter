@@ -1,35 +1,33 @@
 (function($){
 
-    var socket = io.connect(window.location.host),
-          musics = false,
+    var musics = false,
           lastnumber = false,
           audio = $('audio'),
           currentzic = new Object();
 
+            var uri = 'http://' + window.location.host + '/musics'
+            $.getJSON(uri, function (result) {
+                    musics = result;
+                    setMusic();
+                    displayList();
+            });
 
-        socket.on('setMusic', function(array){
-            musics = array;
-            setMusic();
-            displayList();
-        });
-
-
-        setInterval(function () {
-              if (audio[0].paused) {
+            setInterval(function () {
+                    if (audio[0].paused) {
                                 setMusic();
-            }
-        }, 1000);
+                    }
+            }, 5000);
 
 
         function setMusic () {
-            if (musics !== null){
-                    var zic = musics[getNumber()];
-                    currentzic.name = getShiny(zic);
-                    currentzic.url = 'http://' + window.location.host.replace(':771', ':772') + '/' + zic;
-                    $('#current').text(currentzic.name);
-                    audio.attr('src', currentzic.url);
-                    audio[0].play();
-            }
+                    if(musics != false){
+                        var zic = musics[getNumber()];
+                        currentzic.name = getShiny(zic);
+                        currentzic.url = 'http://' + window.location.host + '/' + zic;
+                        $('#current').text(currentzic.name);
+                        audio.attr('src', currentzic.url);
+                        audio[0].play();
+                    }
         }
 
 
@@ -62,7 +60,8 @@
          });
 
         function getShiny (name) {
-             name = name.charAt(0).toUpperCase()  + name.substring(1).toLowerCase().replace('.mp3', '');
+             name = name.charAt(0).toUpperCase()  + name.substring(1).toLowerCase();
+             name = name.replace('.mp3', '');
              name = name.replace(/-/g, ' ');
              return name;
         }
