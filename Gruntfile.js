@@ -6,16 +6,13 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           src: [
-            'node_modules/socket.io/**/*',
-            'node_modules/fast-http/**/*',
-            'node_modules/opn/**/*',
-            'node_modules/chalk/**/*',
             '*.html',
-            'source/',
+            'custom-http.js',
             'vendor/**/*.*',
             'package.json',
             '.gitignore',
-            'server.js'
+            'cli.js',
+            'README.md'
           ],
           dest: 'dist/'
         }]
