@@ -10,6 +10,22 @@
     "serve-static": "^1.5.3",
     "express": "4.8.5"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cedced19/ZikCenter"
+  },
+  "keywords": [
+    "musics",
+    "music",
+    "cli",
+    "basic",
+    "center",
+    "random"
+  ],
+  "bugs": {
+    "url": "https://github.com/cedced19/ZikCenter/issues"
+  },
+  "homepage": "https://github.com/cedced19/ZikCenter",
   "bin" : {
      "zik" :"cli.js"
   },

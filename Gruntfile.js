@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           src: [
-            '*.html',
+            'index.html',
             'vendor/**/*.*',
             'package.json',
             'cli.js',
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
       }
     },
   useminPrepare: {
-      html: '*.html'
+      html: 'index.html'
   },
   usemin: {
     html: 'dist/*.html'
@@ -48,9 +48,7 @@ module.exports = function(grunt) {
             collapseWhitespace: true
           },
           files: {
-            'dist/index.html': 'dist/index.html',
-            'dist/404.html': 'dist/404.html',
-            'dist/500.html': 'dist/500.html'
+            'dist/index.html': 'dist/index.html'
           }
       }
   }
