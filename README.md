@@ -22,9 +22,9 @@ If you reload page the server will be reload the list musics.
 You had to remove space  and replace them by dash.
 Mp3 is the only format to be supporting.
 
-## Dev
+## Developement
 
-To launch in developpement:
+To launch in developement:
 
 ```bash
 $ npm install
