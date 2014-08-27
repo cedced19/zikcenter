@@ -68,6 +68,9 @@
 
         function displayList () {
             for (var k in musics){
+                if (musics[k] == 'Thumbs.db'){
+                    return false;
+                }
                 var music = $('<li>').text(getShiny(musics[k]));
                 music.attr('id', musics[k]);
                 music.appendTo($('#list'));
