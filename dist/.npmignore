@@ -1,0 +1,5 @@
+.npmignore
+vendor/js/client.js
+vendor/js/jquery.min.js
+vendor/css/bootstrap.css
+vendor/css/main.css
