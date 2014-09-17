@@ -9,15 +9,18 @@ var   opn = require('opn'),
         chalk = require('chalk'),
         ls = require('node-ls');
 
-
-app.get('/', function(req, res) {
-  fs.readFile(__dirname + '/index.html', function(err, data) {
-    res.end(data);
-  });
-});
-
 app.get('/musics', function(req, res) {
-    ls('./', '--all', function(er, list) {
+    ls('./', '--all', function(er, data) {
+        var list = new Array();
+        for (var k in data) {
+            var item = {
+                uri : data[k],
+                name : getShiny(data[k])
+            }
+            if (item.uri != "Thumbs.db"){
+                list.push(item);
+            }
+        }
         res.json(list);
     });
 });
@@ -31,3 +34,11 @@ server.listen(771, function() {
     console.log('Server running at\n  => '+ chalk.green('http://localhost:771') + '\nCTRL + C to shutdown');
     opn('http://localhost:771');
 });
+
+
+function getShiny (name) {
+             name = name.charAt(0).toUpperCase()  + name.substring(1).toLowerCase();
+             name = name.replace('.mp3', '');
+             name = name.replace(/-/g, ' ');
+             return name;
+}

@@ -1,6 +1,11 @@
-h2{
-  font-size: 45px;
-}
-ul#list li {
+li {
   font-size: 20px;
+}
+
+a, li {
+    cursor: pointer;
+}
+::selection {
+    background-color: #ecf0f1;
+    color: #2c3e50;
 }
