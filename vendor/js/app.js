@@ -26,15 +26,15 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl", functio
                     }
         }
 
+
         $scope.setZik= function(zik) {
             $scope.currentZik = zik;
          }
 
+        $scope.randomZik();
         $scope.$watch(function() {
-            $scope.audio.playing;
             $scope.audio.play();
-        }, function(status) {
-            if (!status){
+            if ($scope.audio.ended){
                 $scope.randomZik();
             }
         });
