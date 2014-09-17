@@ -33,10 +33,10 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl", functio
 
         $scope.randomZik();
         $scope.$watch(function() {
-            $scope.audio.play();
             if ($scope.audio.ended){
                 $scope.randomZik();
             }
+            $scope.audio.play();
         });
 
         }).error(function(data, status, headers, config) {
