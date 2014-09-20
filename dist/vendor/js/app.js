@@ -3,9 +3,10 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl", functio
         $http.get("/musics").success(function(data, status, headers, config) {
 
         $scope.musics = data;
-        $scope.currentZik = null;
+        $scope.currentzik = null;
+        $scope.wantpause = false;
 
-        $scope.randomZik = function() {
+        $scope.randomzik = function() {
                     var musicsLength = '';
                     for(var i = 0; i < $scope.musics.length; i++) {
                         musicsLength += i;
@@ -19,24 +20,28 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl", functio
                     }
                     if ($scope.lastnumber != number){
                         $scope.lastnumber = number
-                        $scope.currentZik = $scope.musics[number];
+                        $scope.currentzik = $scope.musics[number];
                         $scope.audio.play();
                     }else{
-                         $scope.randomZik();
+                         $scope.randomzik();
                     }
         }
 
 
-        $scope.setZik= function(zik) {
-            $scope.currentZik = zik;
+        $scope.setzik= function(zik) {
+            $scope.currentzik = zik;
          }
 
-        $scope.randomZik();
+        $scope.randomzik();
         $scope.$watch(function() {
             if ($scope.audio.ended){
-                $scope.randomZik();
+                $scope.randomzik();
             }
-            $scope.audio.play();
+            if (!$scope.wantpause){
+                $scope.audio.play();
+            }else{
+                $scope.audio.pause();
+            }
         });
 
         }).error(function(data, status, headers, config) {

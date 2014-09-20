@@ -24,16 +24,23 @@
         </div>
 
         <div class="jumbotron">
-        <h1>{{currentZik.name}}</h1>
-        <p><a class="btn btn-lg btn-success" role="button" ng-click="randomZik()">Change Music</a></p>
+        <h1>{{currentzik.name}}</h1>
+        <p>
+        <a class="btn btn-lg btn-success" role="button" ng-click="randomzik()">Change Music</a>
+        <a class="btn btn-lg btn-success" ng-show="wantpause == true"  ng-click="wantpause = false">Play</a>
+        <a class="btn btn-lg btn-success" ng-show="wantpause == false" ng-click="wantpause = true">Pause</a>
+        </p>
         </div>
+
 
         <div>
             <p><input ng-model="search" type="text" class="form-control" placeholder="Search"></p>
-            <li ng-repeat="zik in musics | filter:search" role="button" ng-click="setZik(zik)">{{zik.name}}</li>
+            <ul>
+              <li ng-repeat="zik in musics | filter:search" role="button" ng-click="setzik(zik)">{{zik.name}}</li>
+            </ul>
         </div>
 
-        <audio media-player="audio" playlist="{src: currentZik.uri, type: 'audio/mpeg'}"></audio>
+        <audio media-player="audio" playlist="{src: currentzik.uri, type: 'audio/mpeg'}"></audio>
 
         <div class="footer">​
           <p>Cedced19​ 2014</p>
