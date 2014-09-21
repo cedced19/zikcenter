@@ -85,5 +85,5 @@ module.exports = function(grunt) {
 
   // Load all Grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-  grunt.registerTask('default', ['copy', 'useminPrepare', 'concat', 'uglify', 'htmlmin', 'uncss', 'autoprefixer', 'cssmin', 'usemin']);
+  grunt.registerTask('default', ['copy', 'useminPrepare', 'concat', 'uglify', 'uncss', 'autoprefixer', 'cssmin', 'usemin', 'htmlmin']);
 };
