@@ -26,8 +26,8 @@
     "url": "https://github.com/cedced19/ZikCenter/issues"
   },
   "homepage": "https://github.com/cedced19/ZikCenter",
-  "bin" : {
-     "zik" :"cli.js"
+  "bin": {
+    "zik": "cli.js"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -38,7 +38,8 @@
     "grunt-usemin": "^2.2.0",
     "grunt-contrib-htmlmin": "^0.3.0",
     "grunt-contrib-concat": "^0.5.0",
-    "grunt-uncss": "^0.3.6"
+    "grunt-uncss": "^0.3.6",
+    "grunt-autoprefixer": "^1.0.1"
   },
   "author": {
     "name": "Cédric",
