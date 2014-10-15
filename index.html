@@ -25,10 +25,11 @@
 
         <div class="jumbotron">
         <h1>{{currentzik.name}}</h1>
+        <h4 class="click" ng-click="setzik(lastzik)">Last music: {{lastzik.name}}</h4>
         <p>
-        <a class="btn btn-lg btn-success" role="button" ng-click="randomzik()">Change Music</a>
-        <a class="btn btn-lg btn-success" ng-show="wantpause == true"  ng-click="wantpause = false">Play</a>
-        <a class="btn btn-lg btn-success" ng-show="wantpause == false" ng-click="wantpause = true">Pause</a>
+        <a class="click btn btn-lg btn-success" role="button" ng-click="randomzik()">Change Music</a>
+        <a class="click btn btn-lg btn-success" ng-show="wantpause == true"  ng-click="wantpause = false">Play</a>
+        <a class="click btn btn-lg btn-success" ng-show="wantpause == false" ng-click="wantpause = true">Pause</a>
         </p>
         </div>
 
@@ -36,7 +37,7 @@
         <div>
             <p><input ng-model="search" type="text" class="form-control" placeholder="Search"></p>
             <ul>
-              <li ng-repeat="zik in musics | filter:search" role="button" ng-click="setzik(zik)">{{zik.name}}</li>
+              <li class="click" ng-repeat="zik in musics | filter:search" role="button" ng-click="setzik(zik)">{{zik.name}}</li>
             </ul>
         </div>
 

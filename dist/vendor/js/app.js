@@ -19,7 +19,8 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl", functio
                         number += chars.substring(rnum, rnum + 1);
                     }
                     if ($scope.lastnumber != number){
-                        $scope.lastnumber = number
+                        $scope.lastnumber = number;
+                        $scope.lastzik = $scope.currentzik;
                         $scope.currentzik = $scope.musics[number];
                         $scope.audio.play();
                     }else{

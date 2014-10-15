@@ -1,9 +1,10 @@
 li {
   font-size: 20px;
 }
-a, li {
+.click {
     cursor: pointer;
 }
+
 ::selection {
     background-color: #ecf0f1;
     color: #2c3e50;
