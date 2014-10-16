@@ -18,11 +18,9 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl", functio
                         var rnum = Math.floor(Math.random() * chars.length);
                         number += chars.substring(rnum, rnum + 1);
                     }
-                    if ($scope.lastnumber != number){
-                        $scope.lastnumber = number;
+                    if ($scope.lastzik != $scope.musics[number]){
                         $scope.lastzik = $scope.currentzik;
                         $scope.currentzik = $scope.musics[number];
-                        $scope.audio.play();
                     }else{
                          $scope.randomzik();
                     }
@@ -30,6 +28,7 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl", functio
 
 
         $scope.setzik= function(zik) {
+            $scope.lastzik = $scope.currentzik;
             $scope.currentzik = zik;
          }
 
@@ -38,10 +37,10 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl", functio
             if ($scope.audio.ended){
                 $scope.randomzik();
             }
-            if (!$scope.wantpause){
-                $scope.audio.play();
-            }else{
+            if ($scope.wantpause){
                 $scope.audio.pause();
+            }else{
+                $scope.audio.play();
             }
         });
 
