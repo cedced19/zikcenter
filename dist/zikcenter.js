@@ -31,9 +31,8 @@ app.use(serveStatic(__dirname));
 app.use(serveStatic(process.cwd()));
 
 var server = require('http').createServer(app);
-server.listen(771, function() {
-    console.log('Server running at\n  => '+ chalk.green('http://localhost:771') + '\nCTRL + C to shutdown');
-    opn('http://localhost:771');
+server.listen(7771, function() {
+    console.log('Server running at\n  => '+ chalk.green('http://localhost:7771') + '\nCTRL + C to shutdown');
 });
 
 
