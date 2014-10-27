@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-var   opn = require('opn'),
-        express = require('express'),
+var   express = require('express'),
         app = express(),
         serveStatic = require('serve-static'),
         path = require('path'),
@@ -13,7 +12,7 @@ app.get('/musics', function(req, res) {
     ls('./', '--all', function(er, data) {
             var list = new Array();
             for (var k in data) {
-                if (/[a-z].mp3/.test(data[k])) {
+                if (/.mp3/.test(data[k])) {
                     fs.renameSync(process.cwd() + '/' + data[k], process.cwd() + '/' + getUnShiny(data[k]));
                     var item = {
                         uri : getUnShiny(data[k]),
