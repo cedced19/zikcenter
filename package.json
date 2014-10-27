@@ -1,6 +1,6 @@
 {
   "name": "zikcenter",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A software to broadcast music",
   "main": "zikcenter.js",
   "dependencies": {

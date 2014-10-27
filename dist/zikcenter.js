@@ -45,5 +45,6 @@ function getShiny (name) {
 function getUnShiny (name) {
              name = name.toLowerCase();
              name = name.replace(/ /g, '-');
+             name = name.replace(/_/g, '-');
              return name;
 }

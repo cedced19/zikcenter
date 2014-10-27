@@ -7,17 +7,7 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl", functio
         $scope.wantpause = false;
 
         $scope.randomzik = function() {
-                    var musicsLength = '';
-                    for(var i = 0; i < $scope.musics.length; i++) {
-                        musicsLength += i;
-                    }
-                    var chars = '0' + musicsLength.replace($scope.musics.length -1,'');
-                    var stringLength = 1;
-                    var number = '';
-                    for(var i = 0; i < stringLength; i++) {
-                        var rnum = Math.floor(Math.random() * chars.length);
-                        number += chars.substring(rnum, rnum + 1);
-                    }
+                    var number = Math.floor(Math.random()*($scope.musics.length));
                     if ($scope.lastzik != $scope.musics[number]){
                         $scope.lastzik = $scope.currentzik;
                         $scope.currentzik = $scope.musics[number];
