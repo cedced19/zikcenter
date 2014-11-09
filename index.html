@@ -18,33 +18,39 @@
 
   <body ng-app="ZikCenter" ng-controller="ZikCenterCtrl">
 
-      <div class="container" ng-show="!error">
-        <div class="header">
-          <h3 class="text-muted">ZikCenter</h3>
+      <div class="container">
+
+        <div ng-show="error">
+            <h1>Houston, we have a problem.</h1>
         </div>
 
-        <div class="jumbotron">
-        <h1>{{currentzik.name}}</h1>
-        <h4 class="click" ng-click="setzik(lastzik)">Last music: {{lastzik.name}}</h4>
-        <p>
-        <a class="click btn btn-lg btn-success" role="button" ng-click="randomzik()">Change Music</a>
-        <a class="click btn btn-lg btn-success" ng-show="wantpause == true"  ng-click="wantpause = false">Play</a>
-        <a class="click btn btn-lg btn-success" ng-show="wantpause == false" ng-click="wantpause = true">Pause</a>
-        </p>
-        </div>
+        <div ng-hide="error">
+            <div class="header">
+              <h3 class="text-muted">ZikCenter</h3>
+            </div>
+            <div class="jumbotron">
+                <h1>{{currentzik.name}}</h1>
+                <h4 class="click" ng-click="setzik(lastzik)">Last music: {{lastzik.name}}</h4>
+                <p>
+                    <a class="click btn btn-lg btn-success" role="button" ng-click="randomzik()">Change Music</a>
+                    <a class="click btn btn-lg btn-success" ng-show="wantpause == true"  ng-click="wantpause = false">Play</a>
+                    <a class="click btn btn-lg btn-success" ng-show="wantpause == false" ng-click="wantpause = true">Pause</a>
+                </p>
+            </div>
 
 
-        <div>
-            <p><input ng-model="search" type="text" class="form-control" placeholder="Search"></p>
-            <ul>
-              <li class="click" ng-repeat="zik in musics | filter:search" role="button" ng-click="setzik(zik)">{{zik.name}}</li>
-            </ul>
-        </div>
+            <div>
+                <p><input ng-model="search" type="text" class="form-control" placeholder="Search"></p>
+                <ul>
+                    <li class="click" ng-repeat="zik in musics | filter:search" role="button" ng-click="setzik(zik)">{{zik.name}}</li>
+                </ul>
+            </div>
 
-        <audio media-player="audio" playlist="{src: currentzik.uri, type: 'audio/mpeg'}"></audio>
+            <audio media-player="audio" playlist="{src: currentzik.uri, type: 'audio/mpeg'}"></audio>
 
-        <div class="footer">​
-          <p>Cedced19​ 2014</p>
+            <div class="footer">​
+              <p>Cedced19​ 2014</p>
+            </div>
         </div>
       </div>
 

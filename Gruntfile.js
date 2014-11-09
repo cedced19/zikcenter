@@ -63,11 +63,6 @@ module.exports = function(grunt) {
   usemin: {
     html: 'dist/*.html'
   },
-  uglify: {
-    options :  {
-      mangle :  false
-    }
-  },
   htmlmin: {
         dist: {
           options: {

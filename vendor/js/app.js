@@ -1,6 +1,6 @@
-angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl", function($scope, $http) {
+angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl",['$scope', '$http', function($scope, $http) {
 
-        $http.get("/musics").success(function(data, status, headers, config) {
+        $http.get("/musics").success(function(data) {
 
         $scope.musics = data;
         $scope.currentzik = null;
@@ -34,7 +34,7 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl", functio
             }
         });
 
-        }).error(function(data, status, headers, config) {
+        }).error(function() {
             $scope.error = true;
         });
-});
+}]);
