@@ -4,9 +4,15 @@ var   express = require('express'),
         app = express(),
         serveStatic = require('serve-static'),
         path = require('path'),
+        program = require('commander'),
         fs = require('fs'),
         chalk = require('chalk'),
         ls = require('node-ls');
+
+program
+  .version(require('./package.json').version)
+  .option('-p, --port [number]', 'specified the port')
+  .parse(process.argv);
 
 app.get('/musics', function(req, res) {
     ls('./', '--all', function(er, data) {
@@ -29,9 +35,15 @@ app.get('/musics', function(req, res) {
 app.use(serveStatic(__dirname));
 app.use(serveStatic(process.cwd()));
 
+if (!isNaN(parseFloat(program.port)) && isFinite(program.port)){
+  var port = program.port;
+}else{
+  var port = 7771;
+}
+
 var server = require('http').createServer(app);
-server.listen(7771, function() {
-    console.log('Server running at\n  => '+ chalk.green('http://localhost:7771') + '\nCTRL + C to shutdown');
+server.listen(port, function() {
+    console.log('Server running at\n  => '+ chalk.green('http://localhost:' + port) + '\nCTRL + C to shutdown');
 });
 
 

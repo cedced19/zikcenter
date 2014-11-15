@@ -19,7 +19,16 @@ $ zik
 ```
 
 If you reload page the server will be reload the list musics.
+
 Mp3 is the only format to be supporting.
+
+##Options
+
+    -h, --help                         output usage information
+
+    -V, --version                    output the version number
+
+    -p, --port [number]          specified the port
 
 ## Developement
 
