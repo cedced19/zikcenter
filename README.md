@@ -24,9 +24,9 @@ Mp3 is the only format to be supporting.
 
 ##Options
 
-    -h, --help                         output usage information
+    -h, --help                  output usage information
 
-    -V, --version                    output the version number
+    -V, --version               output the version number
 
     -p, --port [number]          specified the port
 

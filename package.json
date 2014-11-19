@@ -46,5 +46,10 @@
     "email": "cedced19@gmail.com",
     "url": "https://github.com/cedced19"
   },
-  "license": "MIT"
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://cedced19.github.io/license/"
+    }
+  ]
 }
