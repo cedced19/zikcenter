@@ -16,14 +16,14 @@ program
 
 app.get('/musics', function(req, res) {
     ls('./', '--all', function(er, data) {
-            var list = new Array();
+            var list = [];
             for (var k in data) {
                 if (/.mp3/.test(data[k])) {
                     fs.renameSync(process.cwd() + '/' + data[k], process.cwd() + '/' + getUnShiny(data[k]));
                     var item = {
                         uri : getUnShiny(data[k]),
                         name : getShiny(data[k])
-                    }
+                    };
                     list.push(item);
             }
         }

@@ -9,18 +9,18 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl",["$scope
         $scope.randomzik = function() {
                     var number = Math.floor(Math.random()*($scope.musics.length));
                     if ($scope.lastzik != $scope.musics[number]){
-                        $scope.lastzik = $scope.currentzik;
                         $scope.currentzik = $scope.musics[number];
+                        $scope.lastzik = $scope.currentzik;
                     }else{
                          $scope.randomzik();
                     }
-        }
+        };
 
 
         $scope.setzik= function(zik) {
             $scope.lastzik = $scope.currentzik;
             $scope.currentzik = zik;
-         }
+         };
 
         $scope.randomzik();
         $scope.$watch(function() {
