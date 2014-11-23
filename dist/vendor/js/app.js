@@ -8,9 +8,9 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl",["$scope
 
         $scope.randomzik = function() {
                     var number = Math.floor(Math.random()*($scope.musics.length));
-                    if ($scope.lastzik != $scope.musics[number]){
-                        $scope.currentzik = $scope.musics[number];
+                    if ($scope.currentzik != $scope.musics[number]){
                         $scope.lastzik = $scope.currentzik;
+                        $scope.currentzik = $scope.musics[number];
                     }else{
                          $scope.randomzik();
                     }
