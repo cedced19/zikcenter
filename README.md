@@ -8,6 +8,8 @@ A Node.js software to play random music.
 [![devDependencies](https://david-dm.org/cedced19/ZikCenter/dev-status.png)](https://david-dm.org/cedced19/ZikCenter#info=devDependencies)
 [![NPM version](https://badge.fury.io/js/zikcenter.svg)](http://badge.fury.io/js/zikcenter)
 
+ ![](https://raw.githubusercontent.com/cedced19/ZikCenter/master/demo.png)
+
 ```bash
 $ npm install zikcenter -g
 ```
@@ -20,32 +22,14 @@ $ zik
 
 If you reload page the server will be reload the list musics.
 
-Mp3 is the only format to be supporting.
+MP3 is the only format to be supported because this format is supported in most browsers.
 
-##Options
+##Option
 
-    -h, --help                  output usage information
-
-    -V, --version               output the version number
-
-    -p, --port [number]          specified the port
-
-## Developement
-
-To launch in developement:
-
-```bash
-$ npm install
-$ node cli.js
 ```
+-h, --help                  output usage information
 
-To launch in release:
+-V, --version               output the version number
 
-```bash
-$ npm install
-$ grunt
-$ cd dist/
-$ node cli.js
+-p, --port [number]          specified the port
 ```
-
-NOTE: dist/ is the dist folder.
