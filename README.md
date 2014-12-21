@@ -10,21 +10,18 @@ A Node.js software to play random music.
 
  ![](https://raw.githubusercontent.com/cedced19/ZikCenter/master/demo.png)
 
+##CLI
 ```bash
 $ npm install zikcenter -g
 ```
 
-Go in command line to the directory where you have all your musics.
+Go in command line to the directory where you have your musics.
 
 ```bash
-$ zik
+$ zikcenter
 ```
 
-If you reload page the server will be reload the list musics.
-
-MP3 is the only format to be supported because this format is supported in most browsers.
-
-##Option
+####Options
 
 ```
 -h, --help                  output usage information
@@ -33,3 +30,15 @@ MP3 is the only format to be supported because this format is supported in most 
 
 -p, --port [number]          specified the port
 ```
+
+##Server
+
+```bash
+$ git clone https://github.com/cedced19/ZikCenter
+$ cd ./ZikCenter/dist/
+$ npm install --production
+$ mkdir musics
+$ node zikcenter-server.js
+```
+
+Musics will be on ``/musics/`.

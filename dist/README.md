@@ -8,44 +8,37 @@ A Node.js software to play random music.
 [![devDependencies](https://david-dm.org/cedced19/ZikCenter/dev-status.png)](https://david-dm.org/cedced19/ZikCenter#info=devDependencies)
 [![NPM version](https://badge.fury.io/js/zikcenter.svg)](http://badge.fury.io/js/zikcenter)
 
+ ![](https://raw.githubusercontent.com/cedced19/ZikCenter/master/demo.png)
+
+##CLI
 ```bash
 $ npm install zikcenter -g
 ```
 
-Go in command line to the directory where you have all your musics.
+Go in command line to the directory where you have your musics.
 
 ```bash
-$ zik
+$ zikcenter
 ```
 
-If you reload page the server will be reload the list musics.
+####Options
 
-Mp3 is the only format to be supporting.
+```
+-h, --help                  output usage information
 
-##Options
+-V, --version               output the version number
 
-    -h, --help                  output usage information
+-p, --port [number]          specified the port
+```
 
-    -V, --version               output the version number
-
-    -p, --port [number]          specified the port
-
-## Developement
-
-To launch in developement:
+##Server
 
 ```bash
-$ npm install
-$ node cli.js
+$ git clone https://github.com/cedced19/ZikCenter
+$ cd ./ZikCenter/dist/
+$ npm install --production
+$ mkdir musics
+$ node zikcenter-server.js
 ```
 
-To launch in release:
-
-```bash
-$ npm install
-$ grunt
-$ cd dist/
-$ node cli.js
-```
-
-NOTE: dist/ is the dist folder.
+Musics will be on ``/musics/`.

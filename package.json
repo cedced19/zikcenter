@@ -1,14 +1,14 @@
 {
   "name": "zikcenter",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A software to broadcast music",
-  "main": "zikcenter.js",
+  "main": "zikcenter-server.js",
   "dependencies": {
     "chalk": "0.5.1",
-    "commander": "~2.0.0",
-    "express": "4.10.2",
+    "commander": "~2.5.1",
+    "express": "4.10.6",
     "node-ls": "~0.0.4",
-    "serve-static": "~1.5.3"
+    "serve-static": "~1.7.1"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/cedced19/ZikCenter",
   "bin": {
-    "zik": "zikcenter.js"
+    "zik": "zikcenter-cli.js"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
@@ -35,7 +35,7 @@
     "matchdep": "~0.3.0",
     "grunt-contrib-cssmin": "~0.10.0",
     "grunt-contrib-copy": "~0.7.0",
-    "grunt-usemin": "~2.2.0",
+    "grunt-usemin": "~3.0.0",
     "grunt-contrib-htmlmin": "~0.3.0",
     "grunt-contrib-concat": "~0.5.0",
     "grunt-uncss": "~0.3.6",

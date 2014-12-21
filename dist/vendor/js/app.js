@@ -2,37 +2,39 @@ angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl",["$scope
 
         $http.get("/musics").success(function(data) {
 
-        $scope.musics = data;
-        $scope.currentzik = null;
-        $scope.wantpause = false;
+            $scope.musics = data;
+            $scope.currentzik = null;
+            $scope.wantpause = false;
 
-        $scope.randomzik = function() {
-                    var number = Math.floor(Math.random()*($scope.musics.length));
-                    if ($scope.currentzik != $scope.musics[number]){
-                        $scope.lastzik = $scope.currentzik;
-                        $scope.currentzik = $scope.musics[number];
-                    }else{
-                         $scope.randomzik();
-                    }
-        };
+            $scope.randomzik = function() {
+                        var number = Math.floor(Math.random()*($scope.musics.length));
+                        if ($scope.currentzik != $scope.musics[number]){
+                            $scope.lastzik = $scope.currentzik;
+                            $scope.currentzik = $scope.musics[number];
+                        }else{
+                             $scope.randomzik();
+                        }
+            };
 
 
-        $scope.setzik= function(zik) {
-            $scope.lastzik = $scope.currentzik;
-            $scope.currentzik = zik;
-         };
+            $scope.setzik= function(zik) {
+                if (zik !== null){
+                    $scope.lastzik = $scope.currentzik;
+                    $scope.currentzik = zik;
+                }
+             };
 
-        $scope.randomzik();
-        $scope.$watch(function() {
-            if ($scope.audio.ended){
-                $scope.randomzik();
-            }
-            if ($scope.wantpause){
-                $scope.audio.pause();
-            }else{
-                $scope.audio.play();
-            }
-        });
+            $scope.randomzik();
+            $scope.$watch(function() {
+                if ($scope.audio.ended){
+                    $scope.randomzik();
+                }
+                if ($scope.wantpause){
+                    $scope.audio.pause();
+                }else{
+                    $scope.audio.play();
+                }
+            });
 
         }).error(function() {
             $scope.error = true;
