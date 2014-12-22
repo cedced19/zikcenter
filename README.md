@@ -41,4 +41,4 @@ $ mkdir musics
 $ node zikcenter-server.js
 ```
 
-Musics will be on ``/musics/`.
+Musics will be on `/musics/`.

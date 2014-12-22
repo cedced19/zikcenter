@@ -1,6 +1,6 @@
-angular.module("ZikCenter", ["mediaPlayer"]).controller("ZikCenterCtrl",["$scope", "$http", function($scope, $http) {
+angular.module('ZikCenter', ['mediaPlayer']).controller('ZikCenterCtrl',['$scope', '$http', function($scope, $http) {
 
-        $http.get("/musics").success(function(data) {
+        $http.get('/musics').success(function(data) {
 
             $scope.musics = data;
             $scope.currentzik = null;

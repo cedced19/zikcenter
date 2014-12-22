@@ -17,6 +17,10 @@
   </head>
 
   <body ng-app="ZikCenter" ng-controller="ZikCenterCtrl">
+      
+      <div ng-hide="error" class="progress-bar">
+          <div ng-style="{ width: audio.currentTime*100/audio.duration + '%' }"></div>
+      </div>
 
       <div class="container">
 

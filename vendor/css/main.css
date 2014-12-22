@@ -6,6 +6,24 @@ li {
 }
 
 ::selection {
-    background-color: #ecf0f1;
-    color: #2c3e50;
+    background-color: #18bc9c;
+    color: #ecf0f1;
+}
+
+.progress-bar {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    height: 11.5px;
+    right: 0;
+    background-color: #FFF;
+    border: none;
+}
+
+.progress-bar div {
+  background-color: #18bc9c;
+  height: 100%;
+  border-bottom-right-radius: 6px;
 }
