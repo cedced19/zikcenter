@@ -1,13 +1,13 @@
 {
   "name": "zikcenter",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A software to broadcast music",
-  "main": "zikcenter-server.js",
+  "main": "zikcenter.js",
   "dependencies": {
-    "chalk": "0.5.1",
+    "check-update": "0.0.3",
+    "colors": "^1.0.3",
     "commander": "~2.5.1",
     "express": "4.10.6",
-    "node-ls": "~0.0.4",
     "serve-static": "~1.7.1"
   },
   "repository": {
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/cedced19/ZikCenter",
   "bin": {
-    "zik": "zikcenter-cli.js"
+    "zik": "zikcenter"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

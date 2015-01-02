@@ -10,8 +10,8 @@ module.exports = function(grunt) {
             'index.html',
             'vendor/**/*.*',
             'package.json',
-            'zikcenter-server.js',
-            'zikcenter-cli.js',
+            'zikcenter.js',
+            'lib/*.js',
             'README.md'
           ],
           dest: 'dist/'
