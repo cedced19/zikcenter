@@ -16,7 +16,7 @@ $ npm install zikcenter -g
 Go in command line to the directory where you have your music.
 
 ```bash
-$ zikcenter
+$ zik
 ```
 
 ####Options
