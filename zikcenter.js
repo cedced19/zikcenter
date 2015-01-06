@@ -10,6 +10,7 @@ var app = require('express')(),
     ls = require('./lib/ls'), 
     list = ls('./'), 
     port = 7771;
+
 program
     .version(pkg.version)
     .option('-p, --port [number]', 'specified the port')

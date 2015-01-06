@@ -12,6 +12,7 @@ module.exports = function(grunt) {
             'package.json',
             'zikcenter.js',
             'lib/*.js',
+            'favicon.ico',
             'README.md'
           ],
           dest: 'dist/'
