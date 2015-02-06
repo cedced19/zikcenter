@@ -1,4 +1,4 @@
-#ZikCenter
+# ZikCenter
 
 A Node.js software to play random music.
 
@@ -8,7 +8,7 @@ A Node.js software to play random music.
 
  ![](https://raw.githubusercontent.com/cedced19/ZikCenter/master/demo.png)
 
-##CLI
+## CLI
 ```bash
 $ npm install zikcenter -g
 ```
@@ -19,7 +19,7 @@ Go in command line to the directory where you have your music.
 $ zik
 ```
 
-####Options
+#### Options
 
 ```
 -h, --help                  output usage information
@@ -29,7 +29,7 @@ $ zik
 -p, --port [number]          specified the port
 ```
 
-##Server
+## Server
 
 ```bash
 $ git clone --depth=1 --branch=master https://github.com/cedced19/ZikCenter 

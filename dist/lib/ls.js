@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+'use strict';
 var fs = require('fs');
 var join = require('path').join;
 var getShiny = function (name) {
@@ -26,10 +28,17 @@ module.exports = function (root) {
         if (/.mp3/.test(entry)) {
           var filename = getUnShiny(entry);
           fs.renameSync(f, join(root, d, filename));
-          result.push({
-            uri: d + '/' + filename,
-            name: getShiny(entry)
-          });
+          if (d == '/') {
+            result.push({
+                uri: d + filename,
+                name: getShiny(entry)
+            });
+          } else {
+            result.push({
+                uri: d + '/' + filename,
+                name: getShiny(entry)
+            });
+          }
         }
       }
     });
