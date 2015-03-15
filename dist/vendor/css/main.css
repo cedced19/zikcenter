@@ -4,7 +4,6 @@ li {
 .click {
     cursor: pointer;
 }
-
 ::selection {
     background-color: #18bc9c;
     color: #ecf0f1;

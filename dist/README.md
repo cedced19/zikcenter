@@ -2,11 +2,11 @@
 
 A Node.js software to play random music.
 
-[![Build Status](https://travis-ci.org/cedced19/ZikCenter.svg)](https://travis-ci.org/cedced19/ZikCenter)
+[![Build Status](https://travis-ci.org/cedced19/zikcenter.svg)](https://travis-ci.org/cedced19/zikcenter)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 [![NPM version](https://badge.fury.io/js/zikcenter.svg)](http://badge.fury.io/js/zikcenter)
 
- ![](https://raw.githubusercontent.com/cedced19/ZikCenter/master/demo.png)
+ ![](https://raw.githubusercontent.com/cedced19/zikcenter/master/demo.png)
 
 ## CLI
 ```bash
