@@ -33,7 +33,7 @@ $ zik
 
 ```bash
 $ git clone --depth=1 --branch=master https://github.com/cedced19/ZikCenter 
-$ cd ./ZikCenter/dist/
+$ cd ./zikcenter/dist/
 $ npm install --production
 $ node zikcenter.js
 ```
