@@ -16,6 +16,10 @@ program
     .option('-p, --port [number]', 'specified the port')
     .parse(process.argv);
 
+if (!isNaN(parseFloat(program.port)) && isFinite(program.port)) {
+  port = program.port;
+}
+
 app.get('/api', function (req, res) {
   res.json(list);
 });
@@ -25,13 +29,10 @@ app.get('/api/refresh', function (req, res) {
   res.json(list);
 });
 
+app.disable('x-powered-by');
+
 app.use(serveStatic(__dirname));
 app.use(serveStatic(process.cwd()));
-
-if (!isNaN(parseFloat(program.port)) && isFinite(program.port)) {
-  port = program.port;
-}
-
 
 var server = require('http').createServer(app);
 server.listen(port, function () {

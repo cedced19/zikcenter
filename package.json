@@ -4,7 +4,7 @@
   "description": "A software to broadcast music",
   "main": "zikcenter.js",
   "dependencies": {
-    "check-update": "0.0.7",
+    "check-update": "0.0.8",
     "colors": "1.0.3",
     "commander": "2.7.1",
     "express": "4.12.2",
