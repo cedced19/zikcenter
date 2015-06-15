@@ -33,6 +33,7 @@
     "gulp": "^3.8.10",
     "gulp-htmlmin": "^1.1.1",
     "gulp-if": "^1.2.5",
+    "gulp-concat": "^2.5.2",
     "gulp-minify-css": "^1.1.1",
     "gulp-uglify": "^1.2.0",
     "gulp-uncss": "^1.0.1",
