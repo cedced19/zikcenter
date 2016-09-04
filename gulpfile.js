@@ -20,13 +20,10 @@ gulp.task('copy-server-lib', function() {
 });
 
 gulp.task('html', function () {
-    var assets = useref.assets();
 
     return gulp.src('index.html')
-        .pipe(assets)
-        .pipe(gulpif('*.js', uglify()))
-        .pipe(assets.restore())
         .pipe(useref())
+        .pipe(gulpif('*.js', uglify()))
         .pipe(gulpif('*.html', htmlmin({collapseWhitespace: true})))
         .pipe(gulp.dest('dist'));
 });

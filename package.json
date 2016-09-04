@@ -7,8 +7,13 @@
     "check-update": "0.0.8",
     "colors": "1.1.2",
     "commander": "2.9.0",
+    "env-port": "0.0.0",
     "express": "4.13.3",
-    "serve-static": "1.10.0"
+    "serve-static": "1.10.0",
+    "server-welcome": "0.0.0"
+  },
+  "scripts": {
+    "start": "node zikcenter.js"
   },
   "repository": {
     "type": "git",
@@ -42,7 +47,7 @@
     "gulp-autoprefixer": "^3.1.0"
   },
   "author": {
-    "name": "Cédric",
+    "name": "Cédric Jung",
     "email": "cedced19@gmail.com",
     "url": "https://github.com/cedced19"
   },
