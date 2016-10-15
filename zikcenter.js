@@ -16,8 +16,8 @@ program
     .option('-f, --folder [path]', 'specified the folder where there are musics')
     .parse(process.argv);
 
-
-var list = ls(join((program.folder) || (process.cwd()), './'));
+var musicsPath = (program.folder) || (process.cwd()),
+    list = ls(join(musicsPath, './'));
 
 if (!isNaN(parseFloat(program.port)) && isFinite(program.port)) {
   port = program.port;
@@ -28,14 +28,14 @@ app.get('/api', function (req, res) {
 });
 
 app.get('/api/refresh', function (req, res) {
-  list = ls('./');
+  list = ls(join(musicsPath, './'));
   res.json(list);
 });
 
 app.disable('x-powered-by');
 
 app.use(serveStatic(__dirname));
-app.use(serveStatic((program.folder) || (process.cwd())));
+app.use(serveStatic(musicsPath);
 
 var server = require('http').createServer(app);
 server.listen(port, function () {
