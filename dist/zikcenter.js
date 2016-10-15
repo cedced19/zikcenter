@@ -5,16 +5,19 @@ var app = require('express')(),
     path = require('path'),
     program = require('commander'),
     fs = require('fs'),
-    colors = require('colors'),
+    join = require('path').join,
     pkg = require('./package.json'),
     ls = require('./lib/ls'),
-    list = ls('./'),
     port = require('env-port')('7771');
 
 program
     .version(pkg.version)
     .option('-p, --port [number]', 'specified the port')
+    .option('-f, --folder [path]', 'specified the folder where there are musics')
     .parse(process.argv);
+
+
+var list = ls(join((program.folder) || (process.cwd()), './'));
 
 if (!isNaN(parseFloat(program.port)) && isFinite(program.port)) {
   port = program.port;
@@ -32,8 +35,7 @@ app.get('/api/refresh', function (req, res) {
 app.disable('x-powered-by');
 
 app.use(serveStatic(__dirname));
-app.use(serveStatic(process.cwd()));
-
+app.use(serveStatic((program.folder) || (process.cwd())));
 
 var server = require('http').createServer(app);
 server.listen(port, function () {

@@ -2,20 +2,20 @@
 var fs = require('fs');
 var join = require('path').join;
 var getShiny = function (name) {
-    name = name.charAt(0).toUpperCase()  + name.substring(1).toLowerCase();
-    name = name.replace('.mp3', '');
-    name = name.replace(/-/g, ' ');
-    name = name.replace(/ã©/g, 'é');
-    name = name.replace(/ã§/g, 'ç');
+    name = name.charAt(0).toUpperCase() + name.substring(1).toLowerCase();
+    name = name.replace('.mp3', '')
+               .replace(/-/g, ' ')
+               .replace(/ã©/g, 'é')
+               .replace(/ã§/g, 'ç');
     return name;
 };
 
 var getUnShiny = function (name) {
-    name = name.toLowerCase();
-    name = name.replace(/ /g, '-');
-    name = name.replace(/_/g, '-');
-    name = name.replace(/ã©/g, 'é');
-    name = name.replace(/ã§/g, 'ç');
+    name = name.toLowerCase()
+	       .replace(/ /g, '-')
+               .replace(/_/g, '-')
+               .replace(/ã©/g, 'é')
+               .replace(/ã§/g, 'ç');
     return name;
 };
 module.exports = function (root) {

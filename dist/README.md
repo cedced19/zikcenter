@@ -26,6 +26,8 @@ $ zik
 -V, --version               output the version number
 
 -p, --port [number]          specified the port
+
+-f, --folder [path]          specified the folder where there are musics
 ```
 
 ## Server
