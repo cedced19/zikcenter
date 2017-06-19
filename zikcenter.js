@@ -35,7 +35,7 @@ app.get('/api/refresh', function (req, res) {
 app.disable('x-powered-by');
 
 app.use(serveStatic(__dirname));
-app.use(serveStatic(musicsPath);
+app.use(serveStatic(musicsPath));
 
 var server = require('http').createServer(app);
 server.listen(port, function () {
